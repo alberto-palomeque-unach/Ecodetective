@@ -1,20 +1,20 @@
 import SwiftUI
 import Charts
 
-struct datos: Identifiable {
+struct Datos: Identifiable {
     let id = UUID()
     let name: String
     let numero: Int
 }
 
-let datosGraficos: [datos] = [
+let datosGraficos: [Datos] = [
     .init(name: "hola", numero: 2),
     .init(name: "Adios", numero: 1),
     .init(name: "he", numero: 2),
     .init(name: "lo", numero: 5)
 ]
 
-struct Notice: View {
+struct NoticiasView: View {
     var device = UIDevice.current.userInterfaceIdiom
     
     var body: some View {
@@ -22,8 +22,8 @@ struct Notice: View {
                     Spacer()
                     Chart(datosGraficos) { dato in
                         BarMark (
-                            x: .value("name", dato.name),
-                            y: .value("Numero", dato.numero)
+                            x: .value("name", Dato.name),
+                            y: .value("Numero", Dato.numero)
                         )
                         LineMark(
                             x: .value("name", dato.name),
@@ -59,12 +59,12 @@ struct Notice: View {
                 }
             }
 }
-struct noticias: Identifiable {
+struct Noticias: Identifiable {
     let id = UUID()
     let name: String
     let URL: String
 }
-let conjuntoNoticias: [noticias] = [
+let conjuntoNoticias: [Noticias] = [
     .init(name: "HOLA NIJDKFJKSDJFKJFJKDSJF JAJAJ", URL: "https://www.greenpeace.org/mexico/noticia/53600/ante-aumento-de-deforestacion-en-bacalar-urge-que-profepa-y-senasica-investiguen-y-sancionen-a-los-responsables/"),
     .init(name: "eke", URL: "https://tecnoagro.com.mx/no.-170/el-auge-de-la-agricultura-organica-en-mexico-estadisticas-y-tendencias")
 ]
