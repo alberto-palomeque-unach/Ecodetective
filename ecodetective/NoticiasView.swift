@@ -22,8 +22,8 @@ struct NoticiasView: View {
                     Spacer()
                     Chart(datosGraficos) { dato in
                         BarMark (
-                            x: .value("name", Dato.name),
-                            y: .value("Numero", Dato.numero)
+                            x: .value("name", dato.name),
+                            y: .value("Numero", dato.numero)
                         )
                         LineMark(
                             x: .value("name", dato.name),
