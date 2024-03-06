@@ -8,10 +8,22 @@ struct Datos: Identifiable {
 }
 
 let datosGraficos: [Datos] = [
-    .init(name: "hola", numero: 2),
-    .init(name: "Adios", numero: 1),
-    .init(name: "he", numero: 2),
-    .init(name: "lo", numero: 5)
+    .init(name: "a", numero: 100),
+    .init(name: "b", numero: 240),
+    .init(name: "c", numero: 120),
+    .init(name: "d", numero: 210),
+    .init(name: "e", numero: 190),
+    .init(name: "f", numero: 180),
+    .init(name: "g", numero: 170),
+    .init(name: "h", numero: 150),
+    .init(name: "i", numero: 120),
+    .init(name: "j", numero: 100),
+    .init(name: "k", numero: 70),
+    .init(name: "l", numero: 80),
+    .init(name: "m", numero: 60),
+    .init(name: "n", numero: 50),
+    .init(name: "o", numero: 30),
+    .init(name: "p", numero: 20)
 ]
 
 struct NoticiasView: View {
@@ -21,10 +33,10 @@ struct NoticiasView: View {
                 VStack {
                     Spacer()
                     Chart(datosGraficos) { dato in
-                        BarMark (
+                        AreaMark (
                             x: .value("name", dato.name),
                             y: .value("Numero", dato.numero)
-                        )
+                        ).opacity(0.3)
                         LineMark(
                             x: .value("name", dato.name),
                             y: .value("Numero", dato.numero)
@@ -36,9 +48,8 @@ struct NoticiasView: View {
                             Group {
                                 ForEach(conjuntoNoticias) { noticia in
                                     Link(destination: URL(string: noticia.URL)!) {
-                                        VStack(alignment: .leading) {
-                                            Text("Nombre noticia")
-                                            Text(noticia.name)
+                                        VStack {
+                                            Text(noticia.name).font(.system(size: 25))
                                         }
 //                                        Button {
 //                                            Link(destination: URL(string: noticia.URL)!) {
@@ -59,16 +70,24 @@ struct NoticiasView: View {
                 }
             }
 }
+
 struct Noticias: Identifiable {
     let id = UUID()
     let name: String
     let URL: String
 }
+
 let conjuntoNoticias: [Noticias] = [
-    .init(name: "HOLA NIJDKFJKSDJFKJFJKDSJF JAJAJ", URL: "https://www.greenpeace.org/mexico/noticia/53600/ante-aumento-de-deforestacion-en-bacalar-urge-que-profepa-y-senasica-investiguen-y-sancionen-a-los-responsables/"),
-    .init(name: "eke", URL: "https://tecnoagro.com.mx/no.-170/el-auge-de-la-agricultura-organica-en-mexico-estadisticas-y-tendencias")
+    .init(name: "Aumento de deforestacion en Bacalar", URL: "https://www.greenpeace.org/mexico/noticia/53600/ante-aumento-de-deforestacion-en-bacalar-urge-que-profepa-y-senasica-investiguen-y-sancionen-a-los-responsables/"),
+    .init(name: "Auge de la agricultura Orgánica en México", URL: "https://tecnoagro.com.mx/no.-170/el-auge-de-la-agricultura-organica-en-mexico-estadisticas-y-tendencias"),
+    .init(name: "¿Qué son los alimentos organicos?", URL: "https://www.eluniversal.com.mx/menu/que-son-los-alimentos-organicos/"),
+    .init(name: "e", URL: "https://developer.apple.com/documentation/charts"),
+    .init(name: "Contaminación de miel con residuos de plaguicidas", URL: "https://www.diariodelsur.com.mx/local/ecosur-abejas-miel-contaminada-uso-excesivo-de-plaguicidas-cambio-climatico-9621859.html"),
+    .init(name: "Residuos de plaguicidas en los alimentos", URL: "https://www.who.int/es/news-room/fact-sheets/detail/pesticide-residues-in-food"),
+    .init(name: "Poca producción de cultivos orgánicos en México", URL: "https://producepay.com/es/el-blog/por-que-en-mexico-se-produce-tan-poco-volumen-de-cultivos-organicos/"),
+    .init(name: "eke", URL: "https://developer.apple.com/documentation/charts")
 ]
 
 #Preview {
-    Notice()
+    NoticiasView()
 }
