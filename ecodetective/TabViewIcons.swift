@@ -81,7 +81,7 @@ struct TabViewIcons: View {
                 case .historial:
                     EcoDetective()
                 case .noticias:
-                    Notice()
+                    NoticiasView()
                 }
                 HStack(spacing: 23) {
                     ForEach(Pantallas.allCases) { pantalla in
