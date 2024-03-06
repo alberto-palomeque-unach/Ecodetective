@@ -44,6 +44,7 @@
 		0D7E19F82B98F85D007293F4 /* ecodetectiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ecodetectiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D7E19FC2B98F85D007293F4 /* ecodetectiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecodetectiveUITests.swift; sourceTree = "<group>"; };
 		0D7E19FE2B98F85D007293F4 /* ecodetectiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecodetectiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0D7E1A0B2B98FA5A007293F4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		0D7E19D52B98F85C007293F4 = {
 			isa = PBXGroup;
 			children = (
+				0D7E1A0B2B98FA5A007293F4 /* README.md */,
 				0D7E19E02B98F85C007293F4 /* ecodetective */,
 				0D7E19F12B98F85D007293F4 /* ecodetectiveTests */,
 				0D7E19FB2B98F85D007293F4 /* ecodetectiveUITests */,
