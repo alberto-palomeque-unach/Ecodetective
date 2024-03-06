@@ -11,7 +11,7 @@ import SwiftUI
 struct ecodetectiveApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabViewIcons()
         }
     }
 }
