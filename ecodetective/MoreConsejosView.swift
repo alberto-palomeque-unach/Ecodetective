@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct MoreConsejosView: View {
+    var device = UIDevice.current.userInterfaceIdiom
+    @State private var animationProximamente = false
     var body: some View {
         NavigationStack{
             ZStack {
@@ -9,149 +11,162 @@ struct MoreConsejosView: View {
                 ScrollView{
                     HStack{
                         Rectangle()
-                            .frame(width: 590, height: 150)// cambia
+                            .frame(width: device == .phone ? 410 : 590, height: 150)// cambia
                             .shadow(radius: 3)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .overlay{
                                 Text("¡Usa Transporte!") // cambia
                                     .foregroundColor(.pink)
                                     .bold()
-                                    .padding(.bottom, 90)
-                                    .padding(.trailing, 380)
+                                    .padding(.bottom, device == .phone ? 100 : 90)
+                                    .padding(.trailing, device == .phone ? 230 : 380)
                                 HStack{
                                     Rectangle()
-                                        .frame(width: 400, height: 100)
+                                        .frame(width: device == .phone ? 290 : 400, height: device == .phone ? 200 : 100)
                                         .foregroundStyle(Color.clear)
                                         .overlay{
                                             Text("El auto promedio produce 180g CO2 por km. El autobús transporta 50 persona y por cada persona consumen 1,64 kg.")
                                                 .foregroundColor(.gray)
                                                 .padding(.trailing, 5)
                                                 .padding(.top, 20)
+                                                .font(.system(size: 17))
                                         }
-                                }.padding(.trailing, 140)
+                                }.padding(.trailing, device == .phone ? 100: 140)
                                 Image(systemName: "car.circle.fill")
                                     .resizable()
-                                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
+                                    .frame(width: 100, height: 100)
                                     .foregroundColor(.pink)
-                                    .padding(.leading, 440)
+                                    .padding(.leading, device == .phone ? 300 : 440)
                             }
                     }.padding(.top, 150)
                     
                     HStack{
                         Rectangle()
-                            .frame(width: 590, height: 150)
+                            .frame(width: device == .phone ? 410 : 590, height: 150)
                             .shadow(radius: 3)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .overlay{
                                 Text("¡Separa la basura!")
                                     .foregroundColor(.orange)
                                     .bold()
-                                    .padding(.bottom, 90)
-                                    .padding(.trailing, 380)
+                                    .padding(.bottom, device == .phone ? 100 : 90)
+                                    .padding(.trailing, device == .phone ? 220 : 380)
                                 Rectangle()
-                                    .frame(width: 450, height: 190)
+                                    .frame(width: device == .phone ? 295 : 400, height: device == .phone ? 200 : 100)
                                     .foregroundColor(.clear)
                                     .overlay{
                                         Text("Es importante separar los residuos en distintos botes: orgánica, vidrio, cartón, plásticos y desechos tóxicos. Por tu salud, cuida tu entorno.")
                                             .foregroundColor(.gray)
+                                            .font(.system(size: 17))
                                     }
-                                    .padding(.trailing, 120)
+                                    .padding(.trailing, device == .phone ? 90: 120)
                                     .padding(.top, 20)
                                 Image(systemName: "trash.circle.fill")
                                     .resizable()
                                     .frame(width: 100, height: 100)
                                     .foregroundColor(.orange)
-                                    .padding(.leading, 440)
+                                    .padding(.leading, device == .phone ? 300 : 440)
                             }
-                    }.padding(.top, 30)
+                    }.padding(.top, 20)
+                    
                     HStack{
                         Rectangle()
-                            .frame(width: 590, height: 170)
+                            .frame(width: device == .phone ? 410 : 590, height: device == .phone ? 150 : 150)
                             .shadow(radius: 3)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .overlay{
                                 Text("¡Planta árboles!")
                                     .foregroundColor(.brown)
                                     .bold()
-                                    .padding(.trailing, 400)
-                                    .padding(.bottom, 100)
+                                    .padding(.bottom, device == .phone ? 110 : 90)
+                                    .padding(.trailing, device == .phone ? 240 : 380)
                                 Rectangle()
-                                    .frame(width: 437, height: 100)
+                                    .frame(width: device == .phone ? 290 : 437, height: device == .phone ? 450 : 100)
                                     .foregroundColor(.clear)
                                     .overlay{
                                         Text("Los árboles son esenciales para el mundo, producen oxígeno, reducen el dióxido de carbono, absorben gases contaminantes, regulan la temperatura, entre otros beneficios.")
                                             .foregroundColor(.gray)
-                                    }.padding(.top, 40)
-                                    .padding(.trailing, 110)
+                                            .font(.system(size: 17))
+                                    }.padding(.top, device == .phone ? 20 : 40)
+                                    .padding(.trailing, device == .phone ? 99 : 110)
                                 Image(systemName: "tree.circle.fill")
                                     .resizable()
                                     .frame(width: 100, height: 100)
                                     .foregroundColor(.brown)
-                                    .padding(.leading, 440)
+                                    .padding(.leading, device == .phone ? 300 : 440)
                             }
-                    }.padding(.top, 30)
+                    }.padding(.top, 20)
+                    
                     HStack{
                         Rectangle()
-                            .frame(width: 590, height: 170)
+                            .frame(width: device == .phone ? 410 : 590, height: device == .phone ? 170 : 170)
                             .shadow(radius: 3)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .overlay{
                                 Text("¡Conecta con la naturaleza!")
                                     .foregroundColor(.teal)
                                     .bold()
-                                    .padding(.bottom, 100)
-                                    .padding(.trailing, 290)
+                                    .padding(.bottom, device == .phone ? 109 : 90)
+                                    .padding(.trailing, device == .phone ? 240 : 380)
                                 Rectangle()
-                                    .frame(width: 400, height: 100)
+                                    .frame(width: device == .phone ? 280 : 400, height: 200)
                                     .foregroundColor(.clear)
                                     .overlay{
-                                        Text("Desconecta el cargador de tu celular cuando no lo estés utilizando Esta acción puede hacer una gran diferencia a la hora de ahorrar energía. También aumentarás su vida útil. ")
+                                        Text("Desconecta el cargador de tu celular cuando no lo estés utilizando Esta acción puede hacer una gran diferencia a la hora de ahorrar energía.")
                                             .foregroundColor(.gray)
+                                            .font(.system(size: 17))
                                     }.padding(.top, 45)
-                                    .padding(.trailing, 150)
+                                    .padding(.trailing, device == .phone ? 110: 150)
                                 Image(systemName: "bolt.circle.fill")
                                     .resizable()
                                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
                                     .foregroundStyle(.teal)
-                                    .padding(.leading, 450)
+                                    .padding(.leading, device == .phone ? 300 : 440)
                             }
-                    }.padding(.top, 30)
+                    }.padding(.top, 20)
+                    
                     HStack{
                         Rectangle()
-                            .frame(width: 590, height: 170)
+                            .frame(width: device == .phone ? 410 : 590, height: device == .phone ? 150 : 170)
                             .shadow(radius: 3)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .overlay{
                                Text("¡Ahorra agua!")
                                     .foregroundColor(.blue)
                                     .bold()
-                        .padding(.bottom, 90)
-                                    .padding(.trailing, 420)
+                                    .padding(.bottom, device == .phone ? 115 : 90)
+                                    .padding(.trailing, device == .phone ? 256 : 380)
                                 Rectangle()
-                                    .frame(width: 440, height: 100)
+                                    .frame(width: device == .phone ? 280 : 440, height: device == .phone ? 500 : 100)
                                     .foregroundStyle(Color.clear)
                                     .overlay{
                                         Text("Cerrar el grifo mientras te lavas los dientes, bañarte en 5 minutos, juntar el agua de la regadera mientras te bañas, son pequeñas acciones que ayudan a ahorrarla.")
                                             .foregroundColor(.gray)
-
-                                    }.padding(.top, 50)
-                                    .padding(.trailing, 160)
+                                            .font(.system(size: 17))
+                                    }.padding(.top, device == .phone ? 20 : 50)
+                                    .padding(.trailing, device == .phone ? 110 :160)
                                 Image(systemName: "drop.circle.fill")
                                     .resizable()
-                                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
+                                    .frame(width: 100, height: 100)
                                     .foregroundStyle(.blue)
-                                    .padding(.leading, 450)
+                                    .padding(.leading, device == .phone ? 300 : 440)
                                   }
              
-                    }.padding(.top, 40)
-                    Text("PRÓXIMAMENTE")
-                        .bold()
-                        .padding(.top, 50)
-                        .font(.system(size: 45))
-                    Image(systemName: "hand.raised.app")
-                        .resizable()
-                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
-                        .padding(.top, 2)
+                    }.padding(.top, 20)
+                    VStack {
+                        Text("PRÓXIMAMENTE")
+                            .bold()
+                            .padding(.top, 50)
+                            .font(.system(size: 45))
+                        Image(systemName: "hand.raised.app")
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .padding(.top, 2)
+                    }.foregroundStyle(animationProximamente ? .white : .white.opacity(0.3)).offset(y: -30).onAppear(){
+                        withAnimation(.easeInOut(duration: 0.9).repeatForever()) {
+                            animationProximamente.toggle()
+                        }
+                    }
                 }
             }.edgesIgnoringSafeArea(.all)
                 .navigationTitle("Consejos")
@@ -159,8 +174,6 @@ struct MoreConsejosView: View {
     }
 }
 
-struct VConsejos_Previews: PreviewProvider { // Cambia el nombre de la estructura a VConsejos_Previews
-    static var previews: some View {
-        MoreConsejosView()
-    }
+#Preview {
+    MoreConsejosView()
 }
