@@ -106,7 +106,7 @@ struct ConsejosView: View {
                                         .cornerRadius(10)
                                         .shadow(radius: 3)
                                 }.sheet(isPresented: $isNavigationActiveSCR){
-                                  ConsejosView()
+                                  MoreConsejosView()
                                 }
                                 
                             }.padding(.top, 160)
