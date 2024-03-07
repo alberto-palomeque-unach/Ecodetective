@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D53BC112B9A621600EDC59C /* ArticlesDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0D53BC102B9A621600EDC59C /* ArticlesDetector.mlmodel */; };
 		0D7E19E22B98F85C007293F4 /* ecodetectiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E19E12B98F85C007293F4 /* ecodetectiveApp.swift */; };
 		0D7E19E62B98F85D007293F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D7E19E52B98F85D007293F4 /* Assets.xcassets */; };
 		0D7E19E92B98F85D007293F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D7E19E82B98F85D007293F4 /* Preview Assets.xcassets */; };
@@ -16,7 +17,6 @@
 		0DBDE6622B9A112700866356 /* ConsejosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBDE6612B9A112700866356 /* ConsejosView.swift */; };
 		0DBDE6642B9A113000866356 /* ProductosEcoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBDE6632B9A113000866356 /* ProductosEcoView.swift */; };
 		0DBDE6662B9A113900866356 /* MoreConsejosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBDE6652B9A113900866356 /* MoreConsejosView.swift */; };
-		0DBDE6692B9A432E00866356 /* ArticlesDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0DBDE6682B9A432E00866356 /* ArticlesDetector.mlmodel */; };
 		776AAB912B99701F0037933B /* NoticiasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AAB902B99701F0037933B /* NoticiasView.swift */; };
 		776AAB932B9970280037933B /* TabViewIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AAB922B9970280037933B /* TabViewIcons.swift */; };
 		776AAB952B9975900037933B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AAB942B9975900037933B /* SearchView.swift */; };
@@ -47,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D53BC102B9A621600EDC59C /* ArticlesDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ArticlesDetector.mlmodel; sourceTree = "<group>"; };
 		0D7E19DE2B98F85C007293F4 /* ecodetective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ecodetective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D7E19E12B98F85C007293F4 /* ecodetectiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecodetectiveApp.swift; sourceTree = "<group>"; };
 		0D7E19E52B98F85D007293F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		0DBDE6612B9A112700866356 /* ConsejosView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsejosView.swift; sourceTree = "<group>"; };
 		0DBDE6632B9A113000866356 /* ProductosEcoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductosEcoView.swift; sourceTree = "<group>"; };
 		0DBDE6652B9A113900866356 /* MoreConsejosView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreConsejosView.swift; sourceTree = "<group>"; };
-		0DBDE6682B9A432E00866356 /* ArticlesDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ArticlesDetector.mlmodel; path = ../../ArticlesDetector.mlmodel; sourceTree = "<group>"; };
 		776AAB902B99701F0037933B /* NoticiasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiasView.swift; sourceTree = "<group>"; };
 		776AAB922B9970280037933B /* TabViewIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewIcons.swift; sourceTree = "<group>"; };
 		776AAB942B9975900037933B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -98,6 +98,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D53BC122B9A645B00EDC59C /* Noticias */ = {
+			isa = PBXGroup;
+			children = (
+				776AAB9C2B99990D0037933B /* SFSafariViewWrapper.swift */,
+				776AABAD2B99A7230037933B /* NoticiasClient.swift */,
+				776AAB902B99701F0037933B /* NoticiasView.swift */,
+				776AABA12B99A2AD0037933B /* NoticiasArticleView.swift */,
+				776AABA92B99A6550037933B /* NoticiasHeadlinesView.swift */,
+				776AABAB2B99A6ED0037933B /* NoticiasHeadlinesViewModel.swift */,
+			);
+			path = Noticias;
+			sourceTree = "<group>";
+		};
+		0D53BC132B9A647500EDC59C /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				776AAB9A2B9986BA0037933B /* CameraView.swift */,
+				0D53BC102B9A621600EDC59C /* ArticlesDetector.mlmodel */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		0D7E19D52B98F85C007293F4 = {
 			isa = PBXGroup;
 			children = (
@@ -125,19 +147,13 @@
 				0DBDE6652B9A113900866356 /* MoreConsejosView.swift */,
 				0DBDE6632B9A113000866356 /* ProductosEcoView.swift */,
 				0DBDE6612B9A112700866356 /* ConsejosView.swift */,
-				776AAB9A2B9986BA0037933B /* CameraView.swift */,
-				0DBDE6682B9A432E00866356 /* ArticlesDetector.mlmodel */,
 				776AAB922B9970280037933B /* TabViewIcons.swift */,
 				776AAB942B9975900037933B /* SearchView.swift */,
-				776AAB902B99701F0037933B /* NoticiasView.swift */,
-				776AABA12B99A2AD0037933B /* NoticiasArticleView.swift */,
-				776AABA92B99A6550037933B /* NoticiasHeadlinesView.swift */,
-				776AABAB2B99A6ED0037933B /* NoticiasHeadlinesViewModel.swift */,
-				776AABAD2B99A7230037933B /* NoticiasClient.swift */,
+				0D53BC132B9A647500EDC59C /* Camera */,
+				0D53BC122B9A645B00EDC59C /* Noticias */,
 				0D7E19E12B98F85C007293F4 /* ecodetectiveApp.swift */,
 				0D7E19E52B98F85D007293F4 /* Assets.xcassets */,
 				0D7E19E72B98F85D007293F4 /* Preview Content */,
-				776AAB9C2B99990D0037933B /* SFSafariViewWrapper.swift */,
 			);
 			path = ecodetective;
 			sourceTree = "<group>";
@@ -260,7 +276,6 @@
 			mainGroup = 0D7E19D52B98F85C007293F4;
 			packageReferences = (
 				776AAB9E2B99A2220037933B /* XCRemoteSwiftPackageReference "NewsAPI" */,
-				0DBDE6672B9A3CD400866356 /* XCRemoteSwiftPackageReference "swift-sdk" */,
 			);
 			productRefGroup = 0D7E19DF2B98F85C007293F4 /* Products */;
 			projectDirPath = "";
@@ -309,9 +324,9 @@
 				0DBDE6662B9A113900866356 /* MoreConsejosView.swift in Sources */,
 				776AAB912B99701F0037933B /* NoticiasView.swift in Sources */,
 				0DBDE6622B9A112700866356 /* ConsejosView.swift in Sources */,
+				0D53BC112B9A621600EDC59C /* ArticlesDetector.mlmodel in Sources */,
 				776AABAA2B99A6550037933B /* NoticiasHeadlinesView.swift in Sources */,
 				0DBDE6642B9A113000866356 /* ProductosEcoView.swift in Sources */,
-				0DBDE6692B9A432E00866356 /* ArticlesDetector.mlmodel in Sources */,
 				776AAB9B2B9986BA0037933B /* CameraView.swift in Sources */,
 				0D7E19E22B98F85C007293F4 /* ecodetectiveApp.swift in Sources */,
 				776AABA22B99A2AD0037933B /* NoticiasArticleView.swift in Sources */,
@@ -649,14 +664,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0DBDE6672B9A3CD400866356 /* XCRemoteSwiftPackageReference "swift-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/roboflow/swift-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.3;
-			};
-		};
 		776AAB9E2B99A2220037933B /* XCRemoteSwiftPackageReference "NewsAPI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mtfum/NewsAPI.git";

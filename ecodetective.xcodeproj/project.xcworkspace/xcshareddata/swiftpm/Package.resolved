@@ -1,5 +1,5 @@
 {
-  "originHash" : "8eb90148e12a7afa093f00b82dc60ad8fe3657eebee1b7803fb63883a1fd1c86",
+  "originHash" : "4e1870cb10a08d9149076c438281adf7ea93631655d4e8c6fcd77d7614deeb4d",
   "pins" : [
     {
       "identity" : "newsapi",
@@ -8,15 +8,6 @@
       "state" : {
         "revision" : "862a1d7a3a45a897677dbf2b6c58c3c62edd6c75",
         "version" : "0.2.0"
-      }
-    },
-    {
-      "identity" : "swift-sdk",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/roboflow/swift-sdk",
-      "state" : {
-        "revision" : "19f6863e8612cf72a541d9b862e2681ae1a9e051",
-        "version" : "1.0.3"
       }
     }
   ],
