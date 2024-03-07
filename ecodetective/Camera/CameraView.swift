@@ -17,12 +17,17 @@ struct CameraRecognitionView: View {
     var body: some View {
         VStack {
             if isCameraActive {
+                ZStack {
                 CameraView(recognizedObjects: $recognizedObjects)
 //                List(recognizedObjects, id: \.self) { obj in
 //                    Text("Objeto: \(obj)")
 //                }
-                ForEach(recognizedObjects, id: \.self) { obj in
-                    Text(obj)
+                    VStack {
+                        Spacer()
+                        ForEach(recognizedObjects.sorted(), id: \.self) { obj in
+                            Text(obj)
+                        }
+                    }
                 }
             }
         }
@@ -41,6 +46,7 @@ struct CameraView: UIViewControllerRepresentable {
 
         class Coordinator: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
             var parent: CameraView
+            var allRecognizedObjects: [String] = []
 
             init(parent: CameraView) {
                 self.parent = parent
@@ -61,12 +67,16 @@ struct CameraView: UIViewControllerRepresentable {
                         let objectLabel = observation.labels.first?.identifier ?? ""
                         return objectLabel
                     })
+                    
+                    self.allRecognizedObjects.append(contentsOf: recognizedObjects)
 
 //                    DispatchQueue.main.async {
 //                        self.parent.recognizedObjects = recognizedObjects.isEmpty ? [] : Array(recognizedObjects)
 //                    }
+                    let uniqueObjects = Array(Set(self.allRecognizedObjects))
                     DispatchQueue.main.async {
-                        self.parent.recognizedObjects = Array(recognizedObjects)
+                        //self.parent.recognizedObjects = Array(recognizedObjects)
+                        self.parent.recognizedObjects = uniqueObjects
                     }
                 }
 
