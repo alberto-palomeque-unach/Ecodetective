@@ -7,24 +7,41 @@ struct Datos: Identifiable {
     let numero: Int
 }
 
+
 let datosGraficos: [Datos] = [
-    .init(name: "a", numero: 100),
-    .init(name: "b", numero: 240),
-    .init(name: "c", numero: 120),
-    .init(name: "d", numero: 210),
-    .init(name: "e", numero: 190),
-    .init(name: "f", numero: 180),
-    .init(name: "g", numero: 170),
-    .init(name: "h", numero: 150),
-    .init(name: "i", numero: 120),
-    .init(name: "j", numero: 100),
-    .init(name: "k", numero: 70),
-    .init(name: "l", numero: 80),
-    .init(name: "m", numero: 60),
-    .init(name: "n", numero: 50),
-    .init(name: "o", numero: 30),
-    .init(name: "p", numero: 20)
+    .init(name: "Aguascalientes", numero: 58),
+    .init(name: "Baja California", numero: 47),
+    .init(name: "Baja California Sur", numero: 19),
+    .init(name: "Campeche", numero: 1106),
+    .init(name: "Chiapas", numero: 194),
+    .init(name: "Chihuahua", numero: 194),
+    .init(name: "Coahuila", numero: 52),
+    .init(name: "Colima", numero: 30),
+    .init(name: "Durango", numero: 72),
+    .init(name: "Guanajuato", numero: 240),
+    .init(name: "Guerrero", numero: 1023),
+    .init(name: "Hidalgo", numero: 129),
+    .init(name: "Jalisco", numero: 284),
+    .init(name: "México", numero: 674),
+    .init(name: "Michoacán", numero: 285),
+    .init(name: "Morelos", numero: 274),
+    .init(name: "Nayarit", numero: 120),
+    .init(name: "Nuevo León", numero: 40),
+    .init(name: "Oaxaca", numero: 376),
+    .init(name: "Puebla", numero: 508),
+    .init(name: "Querétaro", numero: 102),
+    .init(name: "Quintana Roo", numero: 93),
+    .init(name: "San Luis Potosí", numero: 131),
+    .init(name: "Sinaloa", numero: 195),
+    .init(name: "Sonora", numero: 51),
+    .init(name: "Tabasco", numero: 221),
+    .init(name: "Tamaulipas", numero: 67),
+    .init(name: "Tlaxcala", numero: 37),
+    .init(name: "Veracruz", numero: 823),
+    .init(name: "Yucatán", numero: 290),
+    .init(name: "Zacatecas", numero: 86)
 ]
+
 
 struct NoticiasView: View {
     var device = UIDevice.current.userInterfaceIdiom
@@ -45,34 +62,6 @@ struct NoticiasView: View {
                         )
                         
                     }.foregroundStyle(.green).frame(width: device == .phone ? 400 : 800, height: device == .phone ? 300 : 600).background(.black)
-//                    ScrollView {
-//                        VStack {
-//                            Group {
-//                                ForEach(conjuntoNoticias) { noticia in
-//                                        VStack {
-//                                            Text(noticia.name).font(.system(size: 25))
-//                                                .onTapGesture {
-//                                                    showSafari.toggle()
-//                                                }
-//                                                .fullScreenCover(isPresented: $showSafari) {
-//                                                    SFSafariViewWrapper(url: URL(string: noticia.URL)!)
-//                                                }
-//                                        }
-////                                        Button {
-////                                            Link(destination: URL(string: noticia.URL)!) {
-////                                            }
-////                                        } label: {
-////                                            Text("Nombre noticia")
-////                                            Text(noticia.name)
-////                                        }
-//
-//                                }
-//                            }.padding().frame(width: device == .phone ? 400 : 800, height: 80, alignment: .leading)
-//                                .background {
-//                                    Color.white.clipShape(RoundedRectangle(cornerRadius: 12.0))
-//                                }.foregroundStyle(.black)
-//                        }
-//                    }
                     NoticiasHeadlinesView()
                 }
             }
@@ -83,17 +72,6 @@ struct Noticias: Identifiable {
     let name: String
     let url: String
 }
-
-let conjuntoNoticias: [Noticias] = [
-    .init(name: "Aumento de deforestacion en Bacalar", url: "https://www.greenpeace.org/mexico/noticia/53600/ante-aumento-de-deforestacion-en-bacalar-urge-que-profepa-y-senasica-investiguen-y-sancionen-a-los-responsables/"),
-    .init(name: "Auge de la agricultura Orgánica en México", url: "https://tecnoagro.com.mx/no.-170/el-auge-de-la-agricultura-organica-en-mexico-estadisticas-y-tendencias"),
-    .init(name: "¿Qué son los alimentos organicos?", url: "https://www.eluniversal.com.mx/menu/que-son-los-alimentos-organicos/"),
-    .init(name: "e", url: "https://developer.apple.com/documentation/charts"),
-    .init(name: "Contaminación de miel con residuos de plaguicidas", url: "https://www.diariodelsur.com.mx/local/ecosur-abejas-miel-contaminada-uso-excesivo-de-plaguicidas-cambio-climatico-9621859.html"),
-    .init(name: "Residuos de plaguicidas en los alimentos", url: "https://www.who.int/es/news-room/fact-sheets/detail/pesticide-residues-in-food"),
-    .init(name: "Poca producción de cultivos orgánicos en México", url: "https://producepay.com/es/el-blog/por-que-en-mexico-se-produce-tan-poco-volumen-de-cultivos-organicos/"),
-    .init(name: "eke", url: "https://developer.apple.com/documentation/charts")
-]
 
 #Preview {
     NoticiasView()
