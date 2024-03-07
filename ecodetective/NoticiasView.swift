@@ -36,7 +36,7 @@ struct NoticiasView: View {
                         AreaMark (
                             x: .value("name", dato.name),
                             y: .value("Numero", dato.numero)
-                        ).opacity(0.3)
+                        ).foregroundStyle(.linearGradient(colors: [.green.opacity(0.5), .green.opacity(0.05)], startPoint: .top, endPoint: .bottom))
                         LineMark(
                             x: .value("name", dato.name),
                             y: .value("Numero", dato.numero)
