@@ -18,8 +18,11 @@ struct CameraRecognitionView: View {
         VStack {
             if isCameraActive {
                 CameraView(recognizedObjects: $recognizedObjects)
-                List(recognizedObjects, id: \.self) { obj in
-                    Text("Objeto: \(obj)")
+//                List(recognizedObjects, id: \.self) { obj in
+//                    Text("Objeto: \(obj)")
+//                }
+                ForEach(recognizedObjects, id: \.self) { obj in
+                    Text(obj)
                 }
             }
         }
@@ -28,6 +31,7 @@ struct CameraRecognitionView: View {
         }
         .onDisappear {
             isCameraActive = false
+            recognizedObjects = []
         }
     }
 }
