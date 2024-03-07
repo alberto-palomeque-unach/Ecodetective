@@ -294,3 +294,6 @@ let contenido: [TextoImagen] = [
     .init(titulo: "¡Ahorra agua!", descripcion: "¡Ahorrar agua es crucial para conservar nuestro recurso más preciado! Cada gota cuenta en la lucha contra la escasez de agua y la protección de ecosistemas vitales.", imagen: "drop.circle.fill", derecha: 430, colores: .blue)
 ]
 
+#Preview {
+    ConsejosView()
+}

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ConsejosView: View {
+struct MoreConsejosView: View {
     var body: some View {
         NavigationStack{
             ZStack {
@@ -161,6 +161,6 @@ struct ConsejosView: View {
 
 struct VConsejos_Previews: PreviewProvider { // Cambia el nombre de la estructura a VConsejos_Previews
     static var previews: some View {
-        ConsejosView()
+        MoreConsejosView()
     }
 }
