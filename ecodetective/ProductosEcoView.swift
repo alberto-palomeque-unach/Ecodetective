@@ -5,23 +5,23 @@ struct ProductosEcoView: View {
     @State private var buttonColor2 = Color.green
     @State private var buttonColor3 = Color.green
     @State private var buttonColor4 = Color.green
+    var device = UIDevice.current.userInterfaceIdiom
     var body: some View{
-        NavigationView{
             ZStack {
-                LinearGradient(colors: [.init(uiColor: UIColor(red: 0.18, green: 0.24, blue: 0.27, alpha: 1.00)), .init(uiColor: UIColor(red: 0.49, green: 0.76, blue: 0.52, alpha: 1.00)), .init(uiColor: UIColor(red: 0.25, green: 0.47, blue: 0.34, alpha: 1.00))], startPoint:
-                        .bottomLeading, endPoint: .topTrailing)
+                Color.clear
                 ScrollView{
+                    Text("Productos Eco").offset(y: 150).frame(width: 500, height: 0).font(.system(size: 40)).padding(.trailing, 130).padding(.bottom, 20)
                     HStack{
                         Rectangle()
                             .cornerRadius(20)
                             .shadow(radius: 3)
-                            .frame(width: 590, height: 350)
+                            .frame(width: device == .phone ? 410 : 590, height: device == .phone ? 350 : 350)
                             .overlay{
                                 HStack{
                                     Text("Los productos más populares de esta semana son")
                                         .bold()
                                         .foregroundColor(.gray)
-                                        .padding(.bottom, 300)
+                                        .padding(.bottom, device == .phone ? 220 : 300).offset(y: -40)
                                         .padding(.trailing, 50)
                                 }.padding(.top, 50)
                                     .padding(.leading, 90)
@@ -36,17 +36,17 @@ struct ProductosEcoView: View {
                                                 .font(.system(size: 40))
                                         }
                                 }.padding(.top, 180)
-                                Image("Bebida Honest")
+                                Image("JugoPomita")
                                     .resizable()
-                                    .frame(width: 50, height: 100)
-                                    .padding(.bottom, 70)
-                                Image("arándanos")
+                                    .frame(width: 80, height: 150)
+                                    .padding(.bottom, 80)
+                                Image("CafeAltura")
                                     .resizable()
                                     .frame(width: 70, height: 100)
                                     .padding(.trailing, 200)
-                                Image("Crema Coco")
+                                Image("AzucarAires")
                                     .resizable()
-                                    .frame(width: 100, height: 80)
+                                    .frame(width: 150, height: 200)
                                     .padding(.top, 62)
                                     .padding(.leading, 200)
                                 HStack{
@@ -74,29 +74,31 @@ struct ProductosEcoView: View {
                                 }.padding(.top, 230)
                                     .padding(.leading, 200)
                             }
-                    }.offset(x: 0, y:115)
+                    }.offset(x: 0, y: device == .phone ? 180 : 115)
                     ForEach(productos) { producto in
                             HStack {
                                 Rectangle()
-                                    .frame(width: 590, height: 200)
+                                    .frame(width: device == .phone ? 410 :590, height: 200)
                                     .clipShape(RoundedRectangle(cornerRadius: 20))
                                     .shadow(radius: 3)
                                     .overlay {
                                         HStack {
                                             ForEach(producto.etiquetas, id: \.id) { etiqueta in
                                                 Rectangle()
-                                                    .frame(width: etiqueta.width, height: etiqueta.height)
+                                                    .frame(width: device == .phone ? etiqueta.width - 10: etiqueta.width, height: device == .phone ? etiqueta.height - 10: etiqueta.height)
                                                     .foregroundStyle(etiqueta.color)
                                                     .clipShape(RoundedRectangle(cornerRadius: 5))
                                                     .overlay {
                                                         Text(etiqueta.nombre)
                                                             .foregroundColor(.white)
                                                             .bold()
-                                                            .font(.system(size: 11))
+                                                            .font(.system(size: device == .phone ? 8.5 : 11))
                                                     }
-                                                    .padding(.bottom, 90)
+                                                    .padding(.bottom, device == .phone ? 150 : 90)
                                             }
-                                            // Precio
+                                        }
+                                        .padding(.leading, 150)
+                                        // Precio
                                             Rectangle()
                                                 .frame(width: 55, height: 30)
                                                 .foregroundStyle(.cyan)
@@ -107,75 +109,71 @@ struct ProductosEcoView: View {
                                                         .bold()
                                                         .font(.system(size: 11))
                                                 }
-                                                .padding(.bottom, 90)
-                                                .padding(.leading, 30)
-                                        }
-                                        .padding(.leading, 180)
-                                        
+                                                .padding(.top, 150)
+                                                .padding(.leading, device == .phone ? -170 : 30)
                                         Image(producto.imagen)
                                             .resizable()
-                                            .frame(width: producto.imagenAncho, height: producto.imagenAlto)
-                                            .padding(.trailing, 370)
-                                            .padding(.top, 30)
-                                        
+                                            .frame(width: device == .phone ? producto.imagenAncho - 40: producto.imagenAncho, height: device == .phone ? producto.imagenAlto - 40: producto.imagenAlto)
+                                            .padding(.trailing, device == .phone ? 280 : 370)
+                                            .padding(.top, device == .phone ? -10 : 30)
                                         Text(producto.presentacion)
                                             .foregroundStyle(.gray)
                                             .bold()
-                                            .font(.system(size: 17))
+                                            .font(.system(size: device == .phone ? 10 : 17))
                                             .padding(.bottom, 150)
-                                            .padding(.trailing, 370)
+                                            .padding(.trailing, device == .phone ? 250 : 370)
                                         
                                         HStack {
                                             HStack {
-                                                Image("Crítica")
+                                                Image("Critica")
                                                     .resizable()
-                                                    .frame(width: 45, height: 45)
+                                                    .frame(width: device == .phone ? 35 : 45, height: device == .phone ? 35 : 45)
                                                 Text(producto.porcentajeCritica)
-                                                    .font(.system(size: 17))
+                                                    .font(.system(size: device == .phone ? 13 : 17))
                                                     .foregroundStyle(.green)
                                                     .bold()
                                             }
-                                            .padding(.trailing, 30)
+                                            .padding(.trailing, device == .phone ? 10 : 30)
                                             
                                             Image("Opinion")
                                                 .resizable()
-                                                .frame(width:40, height: 40)
+                                                .frame(width: device == .phone ? 30 : 40, height: device == .phone ? 30 : 40)
                                             Text(producto.porcentajeOpinion)
-                                                .font(.system(size:17))
+                                                .font(.system(size: device == .phone ? 13 : 17))
                                                 .foregroundStyle(.orange)
                                                 .bold()
                                         }
-                                        .padding(.leading, 15)
+                                        .padding(.leading, device == .phone ? 20 : 15)
                                         .padding(.top, 140)
                                         HStack {
                                             Rectangle()
-                                                .frame(width: 320, height: 150)
+                                                .frame(width: device == .phone ? 250 : 520, height: 150)
                                                 .foregroundStyle(.clear)
                                                 .overlay {
                                                     Text(producto.descripcion)
                                                         .foregroundStyle(.gray)
+                                                        .font(.system(size: 20))
                                                 }
                                         }
-                                        .padding(.top, 20)
-                                        .padding(.leading, 110)
+                                        .padding(.top, device == .phone ? -35 : 20)
+                                        .padding(.leading, device == .phone ? 150 : 130)
                                         BotonView(colorBoton: $buttonColor)
                                     }
                             }
-                            .padding(.top, 25).offset(y: 115)
+                            .padding(.top, 25).offset(y: device == .phone ? 178 : 115)
                     }
-                    HStack{
+                    HStack(alignment: .center) {
                         Text("Otras reseñas")
                             .bold()
                             .font(.system(size: 35))
-                            .padding(.top, 50)
-                            .padding(.trailing, 350)
+                            .padding(.top, device == .phone ? 290 : 100)
+                            .padding(.trailing, device == .phone ? -5 : 100).offset(y: -50)
                     }
                 }
+                
             }.edgesIgnoringSafeArea(.all)
-                .navigationTitle("Productos Eco")
-            
+            .navigationTitle("Productos Eco")
         }
-    }
 }
 
 struct ProductosEcoView_Previews: PreviewProvider { 
@@ -184,9 +182,9 @@ struct ProductosEcoView_Previews: PreviewProvider {
     }
 }
 
-
 struct BotonView: View {
     @Binding var colorBoton: Color
+    var device = UIDevice.current.userInterfaceIdiom
     var body: some View {
         HStack{
             Button(action: {
@@ -207,17 +205,17 @@ struct BotonView: View {
                     HStack{
                         Image(systemName: "info.circle.fill")
                             .resizable()
-                            .frame(width: 30, height: 30)
+                            .frame(width: device == .phone ? 25 : 30, height: device == .phone ? 25 : 30)
                             .foregroundStyle(.white)
                         
-                    }.padding(.trailing, 20)
+                    }.padding(.trailing, device == .phone ? 10 : 20)
                 }
                 .background(colorBoton)
                 .cornerRadius(10)
                 .shadow(radius: 3)
             }
         }.padding(.top, 140)
-            .padding(.leading, 400)
+            .padding(.leading, device == .phone ? 295 : 400)
     }
 }
 
