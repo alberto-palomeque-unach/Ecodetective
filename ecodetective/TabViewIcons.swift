@@ -76,11 +76,9 @@ struct TabViewIcons: View {
                     //Placeholder
                     Text("Placeholder")
                 case .productos:
-                    //Placeholder
                     SearchView()
                 case .camara:
-                    //Placeholder
-                    Text("Placeholder")
+                    CameraRecognitionView()
                 case .historial:
                     //Placeholder
                     Text("Placeholder")
