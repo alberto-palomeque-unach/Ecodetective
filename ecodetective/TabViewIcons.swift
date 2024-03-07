@@ -73,13 +73,17 @@ struct TabViewIcons: View {
             ZStack {
                 switch cambioPantalla {
                 case .principal:
-                    ContentView()
+                    //Placeholder
+                    Text("Placeholder")
                 case .productos:
-                    Vista2()
+                    //Placeholder
+                    SearchView()
                 case .camara:
-                    vista3()
+                    //Placeholder
+                    Text("Placeholder")
                 case .historial:
-                    EcoDetective()
+                    //Placeholder
+                    Text("Placeholder")
                 case .noticias:
                     NoticiasView()
                 }

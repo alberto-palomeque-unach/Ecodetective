@@ -15,6 +15,7 @@
 		0D7E19FF2B98F85D007293F4 /* ecodetectiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E19FE2B98F85D007293F4 /* ecodetectiveUITestsLaunchTests.swift */; };
 		776AAB912B99701F0037933B /* NoticiasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AAB902B99701F0037933B /* NoticiasView.swift */; };
 		776AAB932B9970280037933B /* TabViewIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AAB922B9970280037933B /* TabViewIcons.swift */; };
+		776AAB952B9975900037933B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AAB942B9975900037933B /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		0D7E1A0B2B98FA5A007293F4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		776AAB902B99701F0037933B /* NoticiasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiasView.swift; sourceTree = "<group>"; };
 		776AAB922B9970280037933B /* TabViewIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewIcons.swift; sourceTree = "<group>"; };
+		776AAB942B9975900037933B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				776AAB922B9970280037933B /* TabViewIcons.swift */,
+				776AAB942B9975900037933B /* SearchView.swift */,
 				776AAB902B99701F0037933B /* NoticiasView.swift */,
 				0D7E19E12B98F85C007293F4 /* ecodetectiveApp.swift */,
 				0D7E19E52B98F85D007293F4 /* Assets.xcassets */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				776AAB952B9975900037933B /* SearchView.swift in Sources */,
 				776AAB912B99701F0037933B /* NoticiasView.swift in Sources */,
 				0D7E19E22B98F85C007293F4 /* ecodetectiveApp.swift in Sources */,
 				776AAB932B9970280037933B /* TabViewIcons.swift in Sources */,
