@@ -43,31 +43,17 @@ struct CameraView: UIViewControllerRepresentable {
             }
 
             func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-                guard let model = try? VNCoreMLModel(for: MyImageClassifier1(configuration: MLModelConfiguration()).model) else {
+                guard let model = try? VNCoreMLModel(for: ArticlesDetector(configuration: MLModelConfiguration()).model) else {
                     fatalError("Error cargando el modelo CoreML")
                 }
 
                 let request = VNCoreMLRequest(model: model) { request, error in
-                    guard let results = request.results as? [VNRecognizedObjectObservation], error == nil else {
-                        fatalError("Error al procesar la solicitud")
-                    }
+                                guard let results = request.results as? [VNRecognizedObjectObservation], error == nil else {
+                                    print("Error processing the request")
+                                    return
+                                }
 
-//                    let recognizedObjects = results.map { observation in
-//                        // Process observation and get the recognized object
-//                        return observation.labels.first?.identifier ?? ""
-//                    }
-//
-//                    DispatchQueue.main.async {
-//                        self.parent.recognizedObjects = recognizedObjects.isEmpty ? [] : recognizedObjects
-//                    }
                     let recognizedObjects = Set(results.map { observation in
-                        // Process observation and get the recognized object
-//                        return observation.labels.first?.identifier ?? ""
-                        
-                        
-//                        let objectLabel = observation.labels.first?.identifier ?? ""
-//                                        let boundingBox = observation.boundingBox
-//                                        return "\(objectLabel) - \(boundingBox)"
                         let objectLabel = observation.labels.first?.identifier ?? ""
                         return objectLabel
                     })
