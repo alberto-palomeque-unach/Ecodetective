@@ -1,3 +1,3 @@
 #  Ecodetective
 
-Descripcion pendiente...
+Proyecto para el hackaton local 2024
