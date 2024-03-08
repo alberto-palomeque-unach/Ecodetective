@@ -261,7 +261,7 @@ let productos: [DatosProductos] = [
             .init(nombre: "#Orgánico", color: .orange, width: 90, height: 30)
         ],
         precio: "$57.56",
-        imagen: "Ensaladaeva",
+        imagen: "EnsaladaEva",
         imagenAncho: 130,
         imagenAlto: 130,
         presentacion: "Ensalada Eva (250 gr)",
