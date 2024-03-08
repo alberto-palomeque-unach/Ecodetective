@@ -10,7 +10,7 @@ struct ProductosEcoView: View {
             ZStack {
                 Color.clear
                 ScrollView{
-                    Text("Productos Eco").offset(y: 150).frame(width: 500, height: 0).font(.system(size: 40)).padding(.trailing, 130).padding(.bottom, 20)
+                    Text("Productos Eco").offset(y: 150).frame(width: 500, height: 0).font(.system(size: 40)).padding(.trailing, 130).padding(.bottom, 80)
                     HStack{
                         Rectangle()
                             .cornerRadius(20)
@@ -110,11 +110,11 @@ struct ProductosEcoView: View {
                                                         .font(.system(size: 11))
                                                 }
                                                 .padding(.top, 150)
-                                                .padding(.leading, device == .phone ? -170 : 30)
+                                                .padding(.leading, device == .phone ? -170 : -165)
                                         Image(producto.imagen)
                                             .resizable()
                                             .frame(width: device == .phone ? producto.imagenAncho - 40: producto.imagenAncho, height: device == .phone ? producto.imagenAlto - 40: producto.imagenAlto)
-                                            .padding(.trailing, device == .phone ? 280 : 370)
+                                            .padding(.trailing, device == .phone ? 280 : 420)
                                             .padding(.top, device == .phone ? -10 : 30)
                                         Text(producto.presentacion)
                                             .foregroundStyle(.gray)
@@ -152,7 +152,8 @@ struct ProductosEcoView: View {
                                                 .overlay {
                                                     Text(producto.descripcion)
                                                         .foregroundStyle(.gray)
-                                                        .font(.system(size: 20))
+                                                        .font(.system(size: 15))
+                                                        .padding()
                                                 }
                                         }
                                         .padding(.top, device == .phone ? -35 : 20)
@@ -163,11 +164,7 @@ struct ProductosEcoView: View {
                             .padding(.top, 25).offset(y: device == .phone ? 178 : 115)
                     }
                     HStack(alignment: .center) {
-                        Text("Otras reseñas")
-                            .bold()
-                            .font(.system(size: 35))
-                            .padding(.top, device == .phone ? 290 : 100)
-                            .padding(.trailing, device == .phone ? -5 : 100).offset(y: -50)
+                        
                     }
                 }
                 
@@ -193,6 +190,7 @@ struct BotonView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                     withAnimation {
                         colorBoton = .green 
+                        
                     }
                 }
             }) {

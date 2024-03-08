@@ -79,8 +79,7 @@ struct TabViewIcons: View {
                 case .camara:
                     CameraRecognitionView()
                 case .historial:
-                    //Placeholder
-                    Text("Placeholder")
+                    HistorialView()
                 case .noticias:
                     NoticiasView()
                 }

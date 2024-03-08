@@ -25,7 +25,86 @@ struct CameraRecognitionView: View {
                     VStack {
                         Spacer()
                         ForEach(recognizedObjects.sorted(), id: \.self) { obj in
-                            Text(obj)
+                            if obj == "cafe_organico_irlanda_454g" {
+                                Rectangle()
+                                    .cornerRadius(20)
+                                    .shadow(radius: 3)
+                                    .frame(width: 590, height: 150)
+                                    .overlay{
+                                        HStack {
+                                            Image("cafeoro")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(height: 100)
+                                                .offset(x: 20)
+                                            Spacer()
+                                            Text("Cafe 100% Organico de Chiapas. Finca irlanda en su presentación de 1/2 kg (454 gramos)")
+                                                .font(.title2)
+                                                .foregroundStyle(.gray)
+                                            Button(action: {
+                                            }) {
+                                                HStack{
+                                                    Text("Info")
+                                                        .padding()
+                                                        .foregroundColor(.white)
+                                                        .font(.system(size: 12))
+                                                        .bold()
+                                                    HStack{
+                                                        Image(systemName: "info.circle.fill")
+                                                            .resizable()
+                                                            .frame(width: 30, height: 30)
+                                                            .foregroundStyle(.white)
+                                                        
+                                                    }.padding(.trailing, 20)
+                                                }
+                                                .background(.blue)
+                                                .cornerRadius(10)
+                                                .shadow(radius: 3)
+                                            }
+                                        }
+                                    }
+                                    .animation(.spring)
+                            }
+                            else if obj == "hojas_lechuga_orejona_organica_250g" {
+                                Rectangle()
+                                    .cornerRadius(20)
+                                    .shadow(radius: 3)
+                                    .frame(width: 590, height: 150)
+                                    .overlay{
+                                        HStack {
+                                            Image("lechuga")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(height: 100)
+                                                .offset(x: 20)
+                                            Spacer()
+                                            Text("Mr Lucky Hojas de Lechuga Orejona Orgánica")
+                                                .font(.title2)
+                                                .foregroundStyle(.gray)
+                                            Button(action: {
+                                            }) {
+                                                HStack{
+                                                    Text("Info")
+                                                        .padding()
+                                                        .foregroundColor(.white)
+                                                        .font(.system(size: 12))
+                                                        .bold()
+                                                    HStack{
+                                                        Image(systemName: "info.circle.fill")
+                                                            .resizable()
+                                                            .frame(width: 30, height: 30)
+                                                            .foregroundStyle(.white)
+                                                        
+                                                    }.padding(.trailing, 20)
+                                                }
+                                                .background(.blue)
+                                                .cornerRadius(10)
+                                                .shadow(radius: 3)
+                                            }
+                                        }
+                                    }
+                                    .animation(.spring)
+                            }
                         }
                     }
                 }

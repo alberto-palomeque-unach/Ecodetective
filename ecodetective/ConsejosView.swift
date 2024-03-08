@@ -33,13 +33,13 @@ struct ConsejosView: View {
                                 .bold()
                                 .font(.system(size: 60))
                                 .foregroundColor(Color(uiColor: UIColor(red: 0.00, green: 0.56, blue: 0.22, alpha: 1.00)))
-                                .padding(.top, 73)
-                                .padding(.trailing, 324)
+                                .padding(.top, 72)
+                                .padding(.trailing, 304)
                             Image("lupa")
                                 .resizable()
                                 .frame(width: 70, height: 70)
-                                .padding(.leading, 460)
-                                .padding(.top, 60)
+                                .padding(.leading, -120)
+                                .padding(.top, 100)
                         }
                 }
                 
@@ -54,7 +54,7 @@ struct ConsejosView: View {
                                 HStack(spacing: 20) {
                                         ForEach(contenido) { unico in
                                             Rectangle()
-                                                .frame(width: 560, height: 170)
+                                                .frame(width: 562, height: 170)
                                                 .foregroundStyle(.clear)
                                                 .overlay{
                                                     HStack{
@@ -122,58 +122,67 @@ struct ConsejosView: View {
                         }
                 }.padding(.top, 10)
 
-                HStack{
+//                HStack{
+//                    Rectangle()
+//                        .frame(width: 590, height: 300)
+//                        .cornerRadius(20)
+//                        .padding(.top, 80)
+//                        .shadow(radius: 3)
+//                        .overlay{
+//                            Text("Tu nivel de CO2 esta semana ha sido    ")
+//                                .foregroundColor(.gray)
+//                                .padding(.bottom, 130)
+//                                .bold()
+//                            Image("estadística")
+//                                .resizable()
+//                                .frame(width: 300, height: 300)
+//                                .padding(.top, 130)
+//                            HStack{
+//                                Image(systemName: "align.vertical.bottom.fill")
+//                                    .resizable()
+//                                    .frame(width: 30, height: 30)
+//                                    .foregroundStyle(.linearGradient(colors: [.green, .blue], startPoint: .bottomLeading, endPoint: .bottomTrailing))
+//                                Text("Datos")
+//                                    .foregroundColor(.gray)
+//                            }.padding(.leading, 450)
+//                                .bold()
+//                                .padding(.bottom, 130)
+//                            HStack{
+//                                NavigationLink { 
+//                                    ProductosEcoView()
+//                                } label: { 
+//                                    Button(action: {
+//                                        // Acción al presionar el botón
+//                                        self.buttonColor1 = .indigo // Cambia el color del botón a rojo
+//                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//                                            withAnimation {
+//                                                self.buttonColor1 = .teal // Vuelve el color del botón a azul después de un breve retraso
+//                                            }
+//                                        }
+//                                    }) {
+//                                        Text("¿Por qué?")
+//                                            .padding()
+//                                            .foregroundColor(.white)
+//                                            .font(.system(size: 12))
+//                                            .bold()
+//                                            .background(buttonColor1)
+//                                            .cornerRadius(10)
+//                                            .shadow(radius: 3)
+//                                    }
+//                                }
+//                            }.padding(.top, 320)
+//                                .padding(.leading, 450)
+//                        }
+//                }.offset(x: 0, y:-30)
+                HStack {
                     Rectangle()
-                        .frame(width: 590, height: 300)
                         .cornerRadius(20)
-                        .padding(.top, 80)
                         .shadow(radius: 3)
+                        .frame(width: 590, height: 350)
                         .overlay{
-                            Text("Tu nivel de CO2 esta semana ha sido    ")
-                                .foregroundColor(.gray)
-                                .padding(.bottom, 130)
-                                .bold()
-                            Image("estadística")
-                                .resizable()
-                                .frame(width: 300, height: 300)
-                                .padding(.top, 130)
-                            HStack{
-                                Image(systemName: "align.vertical.bottom.fill")
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                    .foregroundStyle(.linearGradient(colors: [.green, .blue], startPoint: .bottomLeading, endPoint: .bottomTrailing))
-                                Text("Datos")
-                                    .foregroundColor(.gray)
-                            }.padding(.leading, 450)
-                                .bold()
-                                .padding(.bottom, 130)
-                            HStack{
-                                NavigationLink { 
-                                    ProductosEcoView()
-                                } label: { 
-                                    Button(action: {
-                                        // Acción al presionar el botón
-                                        self.buttonColor1 = .indigo // Cambia el color del botón a rojo
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                                            withAnimation {
-                                                self.buttonColor1 = .teal // Vuelve el color del botón a azul después de un breve retraso
-                                            }
-                                        }
-                                    }) {
-                                        Text("¿Por qué?")
-                                            .padding()
-                                            .foregroundColor(.white)
-                                            .font(.system(size: 12))
-                                            .bold()
-                                            .background(buttonColor1)
-                                            .cornerRadius(10)
-                                            .shadow(radius: 3)
-                                    }
-                                }
-                            }.padding(.top, 320)
-                                .padding(.leading, 450)
+                            NoticiasHeadlinesView()
                         }
-                }.offset(x: 0, y:-30)
+                }.padding(.top, 10)
                 HStack{
                     Rectangle()
                         .cornerRadius(20)
@@ -209,15 +218,15 @@ struct ConsejosView: View {
                                             .font(.system(size: 40))
                                     }
                             }.padding(.top, 180)
-                            Image("Bebida Honest")
+                            Image("JugoPomita")
                                 .resizable()
                                 .frame(width: 50, height: 100)
                                 .padding(.bottom, 70)
-                            Image("arándanos")
+                            Image("CafeAltura")
                                 .resizable()
                                 .frame(width: 70, height: 100)
                                 .padding(.trailing, 200)
-                            Image("Crema Coco")
+                            Image("AzucarAires")
                                 .resizable()
                                 .frame(width: 100, height: 80)
                                 .padding(.top, 62)

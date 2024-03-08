@@ -15,7 +15,7 @@ public struct NoticiasHeadlinesView: View {
     public init() {}
     
     public var body: some View {
-        NavigationView {
+        NavigationStack {
             if let errorMessage = errorMessage {
                 Text(errorMessage)
                     .fontWeight(.bold)
